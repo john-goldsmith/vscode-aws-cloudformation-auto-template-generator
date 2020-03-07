@@ -1,0 +1,15 @@
+__mocks__
+.nyc_output
+.vscode/**
+.vscode-test/**
+coverage
+test/**
+**/.eslintrc.json
+.gitignore
+.travis.yml
+ISSUE_TEMPLATE.md
+jest.config.js
+**/jsconfig.json
+PULL_REQUEST_TEMPLATE.md
+vsc-extension-quickstart.md
+**/*.map
