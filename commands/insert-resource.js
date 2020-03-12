@@ -18,7 +18,7 @@ const {
   isFormatJson,
   isVisibilityPublic,
   isExpired,
-  isValidTemplateFormat,
+  isValidFormat,
   getTemplate,
   getAllTypes
 } = require('../utils')
@@ -95,7 +95,6 @@ function insertResource(context) {
         region
       })
 
-      const now = Date.now()
       const { default: defaultResourceVisibility } = pkg.contributes.configuration.properties[`${EXTENSION_NAME}.${RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY}`]
       const visibility = await workspaceConfiguration.get(RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY, defaultResourceVisibility)
       const typeListCacheKey = isVisibilityPublic(visibility)
@@ -106,8 +105,7 @@ function insertResource(context) {
         : PRIVATE_TYPE_LIST_CACHE_TTL_DAYS
       let types = []
       let typeListCache = await workspaceState.get(typeListCacheKey, {updatedAt: 0})
-      const typeListExpiration = new Date(typeListCache.updatedAt)
-      const isTypesCacheExpired = isExpired(now, typeListExpiration, typeListCacheTtlDays)
+      const isTypesCacheExpired = isExpired(typeListCache.updatedAt, typeListCacheTtlDays)
       if (isTypesCacheExpired) {
         types = await withProgress({
           location: ProgressLocation.Notification,
@@ -115,7 +113,7 @@ function insertResource(context) {
         }, () => getAllTypes(cloudformation, visibility))
         setStatusBarMessage(`Fetched ${types.length} resources`, 3000)
         await workspaceState.update(typeListCacheKey, {
-          updatedAt: now,
+          updatedAt: Date.now(),
           typeSummaries: types
         })
       } else {
@@ -141,8 +139,7 @@ function insertResource(context) {
         : PRIVATE_TYPE_CACHE_TTL_DAYS
       const typeCache = await workspaceState.get(typeCacheKey, {})
       const selectedTypeCache = typeCache[selectedTypeName.value] || {updatedAt: 0}
-      const selectedTypeExpiration = new Date(selectedTypeCache.updatedAt)
-      const isSelectedTypeCacheExpired = isExpired(now, selectedTypeExpiration, typeCacheTtlDays)
+      const isSelectedTypeCacheExpired = isExpired(selectedTypeCache.updatedAt, typeCacheTtlDays)
       if (isSelectedTypeCacheExpired) {
         const describeType = promisify(cloudformation.describeType.bind(cloudformation))
         const describeTypeResponse = await withProgress({
@@ -153,12 +150,12 @@ function insertResource(context) {
         await workspaceState.update(typeCacheKey, {
           ...typeCache,
           [selectedTypeName.value]: {
-            updatedAt: now,
+            updatedAt: Date.now(),
             data: describeTypeResponse
           }
         })
         type = {
-          updatedAt: now,
+          updatedAt: Date.now(),
           data: describeTypeResponse
         }
       } else {
@@ -167,7 +164,7 @@ function insertResource(context) {
 
       const { default: defaultTemplateFormat } = pkg.contributes.configuration.properties[`${EXTENSION_NAME}.${TEMPLATE_FORMAT_CONFIGURATION_PROPERTY}`]
       const { languageId } = activeTextEditor.document
-      const templateFormat = isValidTemplateFormat(languageId)
+      const templateFormat = isValidFormat(languageId)
         ? languageId
         : await workspaceConfiguration.get(TEMPLATE_FORMAT_CONFIGURATION_PROPERTY, defaultTemplateFormat)
       const schema = JSON.parse(type.data.Schema)
