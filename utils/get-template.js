@@ -77,7 +77,7 @@ function getTemplate(schema) {
             ? template.push({})
             : template[key] = {}
           Object.keys(value.properties).forEach(propertyKey => {
-            getProperties(propertyKey, value.properties[key], isTemplateArray ? template[0] : template[key])
+            getProperties(propertyKey, value.properties[propertyKey], isTemplateArray ? template[0] : template[key])
           })
           break
 
