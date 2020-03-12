@@ -14,7 +14,7 @@ class NoActiveTextEditorError extends BaseError {
    *
    * @param {String} message
    */
-  constructor(path, message = `No active text editor`) {
+  constructor(message = `No active text editor`) {
     super(message)
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, NoActiveTextEditorError)
