@@ -2,7 +2,17 @@
  * @see https://code.visualstudio.com/api/references/vscode-api#commands.registerCommand
  */
 const commands = {
+  executeCommand: jest.fn().mockImplementation(() => Promise.resolve()),
   registerCommand: jest.fn().mockImplementation(() => 1)
+}
+
+const workspace = {
+  getConfiguration: jest.fn()
+  // getConfiguration: jest.fn(() => {
+  //   return {
+  //     update: jest.fn()
+  //   }
+  // })
 }
 
 /**
@@ -18,8 +28,9 @@ const progress = {
 const window = {
   showInformationMessage: jest.fn(),
   showErrorMessage: jest.fn(),
-  // showInputBox: jest.fn()
-  // showQuickPick: jest.fn()
+  setStatusBarMessage: jest.fn(),
+  showQuickPick: jest.fn(),
+  showInputBox: jest.fn()
   // withProgress: jest.fn().mockImplementation((options, cb) => {
   //   cb(progress)
   // })
@@ -47,8 +58,9 @@ const ProgressLocation = {
 module.exports = {
   commands,
   window,
+  workspace,
   Uri,
   env,
   ProgressLocation,
-  // progress
+  progress
 }

@@ -1,6 +1,6 @@
 const { join } = require('path')
 
-const { getHomeDir } = require('./utils')
+const getHomeDir = require('./utils/get-home-dir')
 
 module.exports = {
   EXTENSION_NAME: 'awsCfnAutoTemplateGenerator',

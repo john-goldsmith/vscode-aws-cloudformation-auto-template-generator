@@ -24,6 +24,7 @@ module.exports = {
   collectCoverageFrom: [
     "commands/**/*.js",
     "errors/**/*.js",
+    "utils/**/*.js",
     "extension.js",
     "cache-keys.js"
   ],

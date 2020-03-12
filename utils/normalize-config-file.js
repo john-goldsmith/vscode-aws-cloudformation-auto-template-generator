@@ -14,9 +14,9 @@ function normalizeConfigFile(data) {
       const matches = PROFILE_KEY_REGEX.exec(key)
       if (matches) {
         const [_1, _2, normalizedKey] = matches
-        if (normalizedKey) {
+        // if (normalizedKey) {
           map[normalizedKey] = data[key]
-        }
+        // }
       }
     }
   }

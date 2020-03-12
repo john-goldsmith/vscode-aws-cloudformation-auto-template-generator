@@ -23,6 +23,8 @@
 		"valid-typeof": "warn"
 	},
 	"globals": {
+		"beforeAll": false,
+		"afterAll": false,
     "afterEach": false,
     "beforeEach": false,
     "before": false,
