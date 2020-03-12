@@ -13,7 +13,7 @@ function normalizeConfigFile(data) {
     } else {
       const matches = PROFILE_KEY_REGEX.exec(key)
       if (matches) {
-        const [_1, _2, normalizedKey] = matches
+        const [_1, _2, normalizedKey] = matches // eslint-disable-line no-unused-vars
         // if (normalizedKey) {
           map[normalizedKey] = data[key]
         // }
