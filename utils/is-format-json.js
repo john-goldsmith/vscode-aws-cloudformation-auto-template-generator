@@ -7,6 +7,7 @@
   * @return {Boolean}
   */
 function isFormatJson(format) {
+  if (typeof format !== 'string') return false
   return format.toLowerCase() === 'json'
 }
 

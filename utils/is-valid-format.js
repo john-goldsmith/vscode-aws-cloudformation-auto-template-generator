@@ -5,7 +5,8 @@
 const { VALID_TEMPLATE_FORMATS } = require('../config')
 
 function isValidFormat(format) {
-  return VALID_TEMPLATE_FORMATS.includes(format)
+  if (typeof format !== 'string') return false
+  return VALID_TEMPLATE_FORMATS.includes(format.toLowerCase())
 }
 
 module.exports = isValidFormat
