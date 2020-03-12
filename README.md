@@ -1,12 +1,12 @@
 # vscode-aws-cloudformation-auto-template-generator
 VS Code extension for automatically generating AWS CloudFormation resource templates.
 
-[![Build Status](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg?branch=develop)](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/6ef99dba3917a1d91650/test_coverage)](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/6ef99dba3917a1d91650/maintainability)](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/maintainability)
-[![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?branch=develop)](https://coveralls.io/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?branch=develop)
+[![Build Status](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg?branch=master)](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d7a491e37274f2241996/test_coverage)](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d7a491e37274f2241996/maintainability)](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?branch=master)](https://coveralls.io/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?branch=master)
 [![David DM](https://david-dm.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://david-dm.org)
-[![Known Vulnerabilities](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg)](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator)
+[![Known Vulnerabilities](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?targetFile=package.json)
 [![Greenkeeper badge](https://badges.greenkeeper.io/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://greenkeeper.io/)
 
 ## Features
