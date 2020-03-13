@@ -10,7 +10,7 @@ const BaseError = require('./base')
 class SecretAccessKeyMissingError extends BaseError {
 
   /**
-   * Creates an instance of NotLoggedInError.
+   * Creates an instance of SecretAccessKeyMissingError.
    *
    * @param {String} message
    */

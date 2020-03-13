@@ -10,7 +10,7 @@ const BaseError = require('./base')
 class ProfileNotSetError extends BaseError {
 
   /**
-   * Creates an instance of NotLoggedInError.
+   * Creates an instance of ProfileNotSetError.
    *
    * @param {String} message
    */

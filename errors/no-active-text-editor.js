@@ -10,7 +10,7 @@ const BaseError = require('./base')
 class NoActiveTextEditorError extends BaseError {
 
   /**
-   * Creates an instance of NotLoggedInError.
+   * Creates an instance of NoActiveTextEditorError.
    *
    * @param {String} message
    */
