@@ -206,7 +206,7 @@
 		"@semantic-release/changelog": "5.0.0",
 		"@types/glob": "7.1.1",
 		"@types/mocha": "7.0.2",
-		"@types/node": "13.9.0",
+		"@types/node": "13.9.1",
 		"@types/vscode": "1.43.0",
 		"commitizen": "4.0.3",
 		"coveralls": "3.0.9",
