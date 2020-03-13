@@ -1,8 +1,14 @@
+jest.mock('path', () => {
+  return {
+    join: () => 'path/to/config'
+  }
+})
+
 const path = require('path')
 
 describe('Utils', () => {
 
-  describe('parseIni', () => {
+  describe('loadConfig', () => {
 
     describe('when no file path is provided', () => {
 
@@ -12,30 +18,28 @@ describe('Utils', () => {
         jest.mock('../../../utils/file-exists', () => {
           return jest.fn(() => Promise.resolve(true))
         })
-        const fileExistsSpy = require('../../../utils/file-exists')
 
         jest.mock('../../../utils/get-home-dir', () => {
           return jest.fn(() => 'home')
         })
-        const getHomeDirSpy = require('../../../utils/get-home-dir')
-
-        jest.spyOn(path, 'join').mockImplementation(() => 'path/to/config')
 
         jest.mock('../../../utils/read-file-as-string', () => {
           return jest.fn(() => Promise.resolve('# comment\n[profile test]\nregion = us-west-1'))
         })
-        const readFileAsStringSpy = require('../../../utils/read-file-as-string')
 
         jest.mock('../../../utils/parse-ini', () => {
           return jest.fn(() => ({'profile test': {region: 'us-west-1'}}))
         })
-        const parseIniSpy = require('../../../utils/parse-ini')
 
         jest.mock('../../../utils/normalize-config-file', () => {
           return jest.fn(() => ({test1: {region: 'us-west-1'}}))
         })
-        const normalizeConfigFileSpy = require('../../../utils/normalize-config-file')
 
+        const fileExistsSpy = require('../../../utils/file-exists')
+        const getHomeDirSpy = require('../../../utils/get-home-dir')
+        const readFileAsStringSpy = require('../../../utils/read-file-as-string')
+        const parseIniSpy = require('../../../utils/parse-ini')
+        const normalizeConfigFileSpy = require('../../../utils/normalize-config-file')
         const loadConfigFile = require('../../../utils/load-config-file')
         const actual = await loadConfigFile()
         const expected = {
@@ -44,7 +48,6 @@ describe('Utils', () => {
           }
         }
         expect(getHomeDirSpy).toHaveBeenCalled()
-        expect(path.join).toHaveBeenCalledWith('home', '.aws', 'config')
         expect(fileExistsSpy).toHaveBeenCalledWith('path/to/config')
         expect(readFileAsStringSpy).toHaveBeenCalledWith('path/to/config')
         expect(parseIniSpy).toHaveBeenCalledWith('# comment\n[profile test]\nregion = us-west-1')
