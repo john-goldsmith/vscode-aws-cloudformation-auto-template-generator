@@ -27,8 +27,8 @@ See [test/unit](./test/unit) for test suite, and [Travis CI](https://travis-ci.o
 1. Run `npm run test:unit`
 
 ```
-Test Suites: 31 passed, 31 total
-Tests:       128 passed, 128 total
+Test Suites: 32 passed, 32 total
+Tests:       131 passed, 131 total
 ```
 
 ## Linting
@@ -39,6 +39,7 @@ Tests:       128 passed, 128 total
 
 * i18n / l10n
 * DRY up tests
+* Account for `VersionId` when fetching a resource type
 
 ## Release Notes
 

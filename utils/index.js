@@ -5,6 +5,7 @@
 const fileExists = require('./file-exists')
 const getAllTypes = require('./get-all-types')
 const getHomeDir = require('./get-home-dir')
+const getLogicalId = require('./get-logical-id')
 const getTemplate = require('./get-template')
 const isExpired = require('./is-expired')
 const isFormatJson = require('./is-format-json')
@@ -19,6 +20,7 @@ module.exports = {
   fileExists,
   getAllTypes,
   getHomeDir,
+  getLogicalId,
   getTemplate,
   isExpired,
   isFormatJson,

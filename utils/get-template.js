@@ -2,18 +2,20 @@
  * @module utils/get-template
  */
 
+ const getLogicalId = require('./get-logical-id')
+
  /**
   * @param {Object} schema
+  * @param {String} [logicalId]
   * @return {Object}
   */
-function getTemplate(schema) {
+function getTemplate(schema, logicalId = getLogicalId(schema.typeName)) {
   const readOnlyProperties = schema.readOnlyProperties.map(property => {
     const pieces = property.split('/')
     return pieces[pieces.length - 1]
   })
   const propertyKeys = Object.keys(schema.properties)
   const writablePropertyKeys = propertyKeys.filter(propertyKey => !readOnlyProperties.includes(propertyKey))
-  const logicalId = `My${schema.typeName.replace(/::/g, '')}`
   const template = {
     [logicalId]: {
       Type: schema.typeName,

@@ -20,7 +20,8 @@ const {
   isExpired,
   isValidFormat,
   getTemplate,
-  getAllTypes
+  getAllTypes,
+  getLogicalId
 } = require('../utils')
 const {
   EXTENSION_NAME,
@@ -97,10 +98,11 @@ function insertResource(context) {
 
       const { default: defaultResourceVisibility } = pkg.contributes.configuration.properties[`${EXTENSION_NAME}.${RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY}`]
       const visibility = await workspaceConfiguration.get(RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY, defaultResourceVisibility)
-      const typeListCacheKey = isVisibilityPublic(visibility)
+      const isPublic = isVisibilityPublic(visibility)
+      const typeListCacheKey = isPublic
         ? PUBLIC_TYPE_LIST_CACHE_KEY
         : PRIVATE_TYPE_LIST_CACHE_KEY
-      const typeListCacheTtlDays = isVisibilityPublic(visibility)
+      const typeListCacheTtlDays = isPublic
         ? PUBLIC_TYPE_LIST_CACHE_TTL_DAYS
         : PRIVATE_TYPE_LIST_CACHE_TTL_DAYS
       let types = []
@@ -127,14 +129,14 @@ function insertResource(context) {
       const describeTypeParams = {
         Type: 'RESOURCE',
         TypeName: selectedTypeName.value
-        // VersionId
+        // TODO: Implement `VersionId`
       }
 
       let type = {}
-      const typeCacheKey = isVisibilityPublic(visibility)
+      const typeCacheKey = isPublic
         ? PUBLIC_TYPE_CACHE_KEY
         : PRIVATE_TYPE_CACHE_KEY
-      const typeCacheTtlDays = isVisibilityPublic(visibility)
+      const typeCacheTtlDays = isPublic
         ? PUBLIC_TYPE_CACHE_TTL_DAYS
         : PRIVATE_TYPE_CACHE_TTL_DAYS
       const typeCache = await workspaceState.get(typeCacheKey, {})
@@ -170,9 +172,10 @@ function insertResource(context) {
       const schema = JSON.parse(type.data.Schema)
       const { line, character } = activeTextEditor.selection.active
       const position = new Position(line, character)
-      const logicalId = `My${schema.typeName.replace(/::/g, '')}`
-      const template = getTemplate(schema)
-      const value = isFormatJson(templateFormat)
+      const logicalId = getLogicalId(schema.typeName)
+      const template = getTemplate(logicalId, schema)
+      const isJson = isFormatJson(templateFormat)
+      const value = isJson
         ? JSON.stringify(template, null, editorTabSize)
         : yaml.safeDump(template, {indent: editorTabSize})
 
@@ -185,7 +188,7 @@ function insertResource(context) {
        * accounts for the opening double quotes '"' of the first property
        * found in JSON.
        */
-      const selection = isFormatJson(templateFormat)
+      const selection = isJson
         ? new Selection(new Position(line + 1, editorTabSize + 1), new Position(line + 1, editorTabSize + 1 + logicalId.length))
         : new Selection(new Position(line, character), new Position(line, logicalId.length))
       activeTextEditor.selection = selection
