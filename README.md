@@ -28,7 +28,7 @@ See [test/unit](./test/unit) for test suite, and [Travis CI](https://travis-ci.o
 
 ```
 Test Suites: 32 passed, 32 total
-Tests:       131 passed, 131 total
+Tests:       133 passed, 133 total
 ```
 
 ## Linting
@@ -40,6 +40,7 @@ Tests:       131 passed, 131 total
 * i18n / l10n
 * DRY up tests
 * Account for `VersionId` when fetching a resource type
+* Implement STS
 
 ## Release Notes
 
