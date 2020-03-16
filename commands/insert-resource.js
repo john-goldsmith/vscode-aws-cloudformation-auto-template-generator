@@ -40,13 +40,14 @@ const {
   SecretAccessKeyMissingError
 } = require('../errors')
 
-const { CloudFormation } = AWS
+const { CloudFormation, SharedIniFileCredentials } = AWS
 const {
   window,
   workspace,
   ProgressLocation,
   Position,
   Selection
+  // commands
 } = vscode
 const {
   withProgress,
@@ -54,6 +55,7 @@ const {
   showQuickPick,
   showErrorMessage
 } = window
+// const { executeCommand } = commands
 const { getConfiguration } = workspace
 
 /**
@@ -72,21 +74,20 @@ function insertResource(context) {
       const { activeTextEditor } = window
       if (!activeTextEditor) throw new NoActiveTextEditorError()
       const { workspaceState } = context
-      const workspaceConfiguration = getConfiguration(EXTENSION_NAME)
-      const editorWorkspaceConfiguration = getConfiguration('editor')
+      const configuration = getConfiguration()
 
-      const editorTabSize = editorWorkspaceConfiguration.get('tabSize')
+      const editorTabSize = configuration.get('editor.tabSize')
       const { default: defaultProfile } = pkg.contributes.configuration.properties[`${EXTENSION_NAME}.${PROFILE_CONFIGURATION_PROPERTY}`]
-      const profile = await workspaceConfiguration.get(PROFILE_CONFIGURATION_PROPERTY, defaultProfile)
+      const profile = await configuration.get(`${EXTENSION_NAME}.${PROFILE_CONFIGURATION_PROPERTY}`, defaultProfile)
       // if (!awsProfile) {
-      //   await vscode.commands.executeCommand('extension.setProfile')
+      //   await executeCommand('extension.setProfile')
       // }
       const { default: defaultRegion } = pkg.contributes.configuration.properties[`${EXTENSION_NAME}.${REGION_CONFIGURATION_PROPERTY}`]
-      const region = await workspaceConfiguration.get(REGION_CONFIGURATION_PROPERTY, defaultRegion)
+      const region = await configuration.get(`${EXTENSION_NAME}.${REGION_CONFIGURATION_PROPERTY}`, defaultRegion)
       // if (!awsRegion) {
-      //   await vscode.commands.executeCommand('extension.setRegion')
+      //   await executeCommand('extension.setRegion')
       // }
-      const creds = new AWS.SharedIniFileCredentials({profile})
+      const creds = new SharedIniFileCredentials({profile})
       const { accessKeyId, secretAccessKey } = creds
       if (!accessKeyId) throw new AccessKeyIdMissingError()
       if (!secretAccessKey) throw new SecretAccessKeyMissingError()
@@ -97,7 +98,7 @@ function insertResource(context) {
       })
 
       const { default: defaultResourceVisibility } = pkg.contributes.configuration.properties[`${EXTENSION_NAME}.${RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY}`]
-      const visibility = await workspaceConfiguration.get(RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY, defaultResourceVisibility)
+      const visibility = await configuration.get(`${EXTENSION_NAME}.${RESOURCE_VISIBILITY_CONFIGURATION_PROPERTY}`, defaultResourceVisibility)
       const isPublic = isVisibilityPublic(visibility)
       const typeListCacheKey = isPublic
         ? PUBLIC_TYPE_LIST_CACHE_KEY
@@ -121,16 +122,9 @@ function insertResource(context) {
       } else {
         types = typeListCache.typeSummaries
       }
-
       const options = types.map(type => ({label: type.TypeName, value: type.TypeName}))
       const selectedTypeName = await showQuickPick(options)
       if (!selectedTypeName) return // Esc
-
-      const describeTypeParams = {
-        Type: 'RESOURCE',
-        TypeName: selectedTypeName.value
-        // TODO: Implement `VersionId`
-      }
 
       let type = {}
       const typeCacheKey = isPublic
@@ -147,7 +141,14 @@ function insertResource(context) {
         const describeTypeResponse = await withProgress({
           location: ProgressLocation.Notification,
           title: `Fetching ${selectedTypeName.value}...`
-        }, () => describeType(describeTypeParams))
+        }, () => {
+          const describeTypeParams = {
+            Type: 'RESOURCE',
+            TypeName: selectedTypeName.value
+            // TODO: Implement `VersionId`
+          }
+          return describeType(describeTypeParams)
+        })
         setStatusBarMessage(`Fetched ${selectedTypeName.value}`, 3000)
         await workspaceState.update(typeCacheKey, {
           ...typeCache,
@@ -168,12 +169,12 @@ function insertResource(context) {
       const { languageId } = activeTextEditor.document
       const templateFormat = isValidFormat(languageId)
         ? languageId
-        : await workspaceConfiguration.get(TEMPLATE_FORMAT_CONFIGURATION_PROPERTY, defaultTemplateFormat)
+        : await configuration.get(`${EXTENSION_NAME}.${TEMPLATE_FORMAT_CONFIGURATION_PROPERTY}`, defaultTemplateFormat)
       const schema = JSON.parse(type.data.Schema)
       const { line, character } = activeTextEditor.selection.active
       const position = new Position(line, character)
       const logicalId = getLogicalId(schema.typeName)
-      const template = getTemplate(logicalId, schema)
+      const template = getTemplate(schema, logicalId)
       const isJson = isFormatJson(templateFormat)
       const value = isJson
         ? JSON.stringify(template, null, editorTabSize)
@@ -184,13 +185,14 @@ function insertResource(context) {
       /**
        * The following automatically highlights the logical ID for easy
        * editing. The expression 'line + 1' accounts for the opening curly
-       * brace found in JSON '{'. The expression 'editorTabSize + 1'
+       * brace '{' found in JSON. The expression 'editorTabSize + 1'
        * accounts for the opening double quotes '"' of the first property
        * found in JSON.
        */
-      const selection = isJson
-        ? new Selection(new Position(line + 1, editorTabSize + 1), new Position(line + 1, editorTabSize + 1 + logicalId.length))
-        : new Selection(new Position(line, character), new Position(line, logicalId.length))
+      const [anchorLine, anchorCharacter, activeLine, activeCharacter] = isJson
+        ? [line + 1, editorTabSize + 1, line + 1, editorTabSize + 1 + logicalId.length]
+        : [line, character, line, logicalId.length]
+      const selection = new Selection(anchorLine, anchorCharacter, activeLine, activeCharacter)
       activeTextEditor.selection = selection
     } catch (err) {
       showErrorMessage(err.message)
