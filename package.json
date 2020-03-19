@@ -198,7 +198,7 @@
 	},
 	"dependencies": {
 		"aws-sdk": "2.640.0",
-		"fs-extra": "8.1.0",
+		"fs-extra": "9.0.0",
 		"js-yaml": "3.13.1"
 	},
 	"description": "VS Code extension for automatically generating AWS CloudFormation resource templates",
