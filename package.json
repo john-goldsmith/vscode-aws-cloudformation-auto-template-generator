@@ -203,7 +203,7 @@
 	},
 	"description": "VS Code extension for automatically generating AWS CloudFormation resource templates",
 	"devDependencies": {
-		"@semantic-release/changelog": "5.0.0",
+		"@semantic-release/changelog": "5.0.1",
 		"@types/glob": "7.1.1",
 		"@types/mocha": "7.0.2",
 		"@types/node": "13.9.1",
