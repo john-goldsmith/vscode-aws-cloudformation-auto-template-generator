@@ -37,7 +37,7 @@ describe('Utils', () => {
             prop7: {
               type: 'object',
               properties: {
-                foo: {
+                prop7a: {
                   type: 'boolean'
                 }
               }
@@ -77,7 +77,7 @@ describe('Utils', () => {
               items: {
                 type: 'object',
                 properties: {
-                  bar: {
+                  prop13a: {
                     type: 'boolean'
                   }
                 }
@@ -114,11 +114,9 @@ describe('Utils', () => {
               prop5: 'UnknownTypeNothing',
               prop6: ['string'],
               prop7: {
-                foo: true
+                prop7a: true
               },
-              prop8: {
-                baz: 123
-              },
+              prop8: 123,
               prop9: [true],
               prop10: ['1.23'],
               prop11: [123],
@@ -127,15 +125,11 @@ describe('Utils', () => {
               ],
               prop13: [
                 {
-                  bar: true
+                  prop13a: true
                 }
               ],
               prop14: ['UnknownTypeWidget'],
-              prop15: [
-                {
-                  baz: 123
-                }
-              ]
+              prop15: [123]
             }
           }
         }
@@ -177,7 +171,7 @@ describe('Utils', () => {
             prop7: {
               type: 'object',
               properties: {
-                foo: {
+                prop7a: {
                   type: 'boolean'
                 }
               }
@@ -217,7 +211,7 @@ describe('Utils', () => {
               items: {
                 type: 'object',
                 properties: {
-                  bar: {
+                  prop13a: {
                     type: 'boolean'
                   }
                 }
@@ -254,11 +248,9 @@ describe('Utils', () => {
               prop5: 'UnknownTypeNothing',
               prop6: ['string'],
               prop7: {
-                foo: true
+                prop7a: true
               },
-              prop8: {
-                baz: 123
-              },
+              prop8: 123,
               prop9: [true],
               prop10: ['1.23'],
               prop11: [123],
@@ -267,15 +259,11 @@ describe('Utils', () => {
               ],
               prop13: [
                 {
-                  bar: true
+                  prop13a: true
                 }
               ],
               prop14: ['UnknownTypeWidget'],
-              prop15: [
-                {
-                  baz: 123
-                }
-              ]
+              prop15: [123]
             }
           }
         }
