@@ -47,7 +47,6 @@ const {
   ProgressLocation,
   Position,
   Selection
-  // commands
 } = vscode
 const {
   withProgress,
@@ -55,7 +54,6 @@ const {
   showQuickPick,
   showErrorMessage
 } = window
-// const { executeCommand } = commands
 const { getConfiguration } = workspace
 
 /**
