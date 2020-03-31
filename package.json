@@ -215,7 +215,7 @@
 		"semantic-release": "17.0.4",
 		"vscode-test": "1.3.0"
 	},
-	"displayName": "vscode-aws-cloudformation-auto-template-generator",
+	"displayName": "AWS CloudFormation Auto-template Generator",
 	"engines": {
 		"vscode": "^1.43.0"
 	},
