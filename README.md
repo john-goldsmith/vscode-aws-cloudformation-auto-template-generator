@@ -60,6 +60,11 @@ By default, fetching a list of resources (public and private) and individual res
 
 ![Bust cache](./images/features/bust-cache.gif)
 
+## Settings
+All settings can be modified by going to <kbd>Preferences</kbd> > <kbd>Settings</kbd> > <kbd>Extensions</kbd> > <kbd>AWS CloudFormation Auto-template Generator</kbd>
+
+![Settings](./images/settings.png)
+
 ## Impetus
 When working with AWS CloudFormation templates, I often find myself referencing the official documentation for a particular resource, which references a nested type, which references a nested type, which references...so on and so forth until reaching the string or boolean value that I'm looking for. This extension helps reduce that friction by automatically expanding the **full** template for any AWS resource, supporting both JSON and YAML templates.
 
