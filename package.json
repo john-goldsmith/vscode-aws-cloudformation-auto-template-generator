@@ -256,5 +256,5 @@
 		"test:integration": "CODE_TESTS_PATH=$(npm prefix)/test/integration CODE_DISABLE_EXTENSIONS=true node ./node_modules/vscode/bin/test",
 		"test:unit": "jest ./test/unit"
 	},
-	"version": "1.0.0"
+	"version": "1.0.1"
 }
