@@ -32,13 +32,10 @@ function getTemplate(schema, logicalId = getLogicalId(schema.typeName)) {
     const isTemplateArray = Array.isArray(template)
 
     if (value['$ref']) {
-      isTemplateArray
-        ? template.push({})
-        : template[key] = {}
       const definitionPieces = value['$ref'].split('/')
       const definitionKey = definitionPieces[definitionPieces.length - 1]
       const definitionValue = schema.definitions[definitionKey]
-      getProperties(definitionKey, definitionValue, isTemplateArray ? template[0] : template[key])
+      getProperties(key, definitionValue, template)
     }
 
     if (value.type) {

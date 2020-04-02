@@ -5,10 +5,16 @@
 const { promisify } = require('util')
 
 /**
- * @param {AWS.CloudFormation} cloudformation
- * @param {String} visibility
- * @param {String} nextToken
- * @param {Array} typeSummaries
+ * Fetches a list of all CloudFormation types. If the previous paginated
+ * request didn't return all of the remaining results, the response
+ * object's `NextToken` parameter value is set to a token, and this
+ * function will be called recursilvey until the `NextToken` parameter
+ * is `null`, indicating that there are no more results.
+ *
+ * @param {AWS.CloudFormation} cloudformation A configured CloudFormation instance
+ * @param {String} visibility One of 'PUBLIC' or 'PRIVATE'
+ * @param {String} nextToken An AWS-issued token indicating that there are more results available, or `null` if there are no more results
+ * @param {Array} typeSummaries An array storing previous results
  * @return {Promise<Array>}
  */
 async function getAllTypes(cloudformation, visibility = 'PUBLIC', nextToken = null, typeSummaries = []) {
