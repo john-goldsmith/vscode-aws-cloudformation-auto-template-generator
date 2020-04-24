@@ -7,7 +7,7 @@ VS Code extension for automatically generating fully-expanded AWS CloudFormation
 [![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?branch=master)](https://coveralls.io/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?branch=master)
 [![David DM](https://david-dm.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://david-dm.org)
 [![Known Vulnerabilities](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?targetFile=package.json)
-[![Greenkeeper badge](https://badges.greenkeeper.io/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://greenkeeper.io/) [![Join the chat at https://gitter.im/vscode-aws-cloudformation-auto-template-generator/community](https://badges.gitter.im/vscode-aws-cloudformation-auto-template-generator/community.svg)](https://gitter.im/vscode-aws-cloudformation-auto-template-generator/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Features
 
