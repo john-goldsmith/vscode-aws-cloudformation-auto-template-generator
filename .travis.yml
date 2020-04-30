@@ -9,6 +9,8 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
+  - npm run lint
+  - npm run docs:lint
   - npm run test:unit
   - npm run coveralls
 after_script:
