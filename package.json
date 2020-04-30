@@ -202,7 +202,7 @@
 		"@types/mocha": "7.0.2",
 		"@types/node": "13.13.2",
 		"@types/vscode": "1.44.0",
-		"commitizen": "4.0.4",
+		"commitizen": "4.0.5",
 		"coveralls": "3.1.0",
 		"cz-conventional-changelog": "3.1.0",
 		"eslint": "6.8.0",
