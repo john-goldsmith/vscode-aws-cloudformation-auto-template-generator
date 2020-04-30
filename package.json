@@ -252,7 +252,7 @@
 		"coveralls": "cat ./coverage/lcov.info | npx coveralls",
 		"cz": "npx git-cz",
 		"lint": "npx eslint ./extension.js ./cache-keys.js ./config.js ./commands/**/*.js ./errors/**/*.js ./test/**/*.js ./utils/**/*.js",
-		"precommit": "npm run lint && npm test",
+		"precommit": "npm run lint && npm run docs:lint && npm test",
 		"test": "npx npm-run-all test:*",
 		"test:integration": "CODE_TESTS_PATH=$(npm prefix)/test/integration CODE_DISABLE_EXTENSIONS=true node ./node_modules/vscode/bin/test",
 		"test:unit": "npx jest ./test/unit",
