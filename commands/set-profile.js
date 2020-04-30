@@ -1,7 +1,3 @@
-/**
- * @module commands/set-profile
- */
-
 const vscode = require('vscode')
 
 const {
@@ -37,7 +33,7 @@ function setProfile() {
       if (!selectedProfile) return // Esc
       const profile = profiles[selectedProfile.value]
       await workspaceConfiguration.update(PROFILE_CONFIGURATION_PROPERTY, selectedProfile.value)
-      /**
+      /*
        * TODO: Is the following region check needed? Is it enforced by
        * the AWS CLI?
        */

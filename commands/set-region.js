@@ -1,7 +1,3 @@
-/**
- * @module commands/set-region
- */
-
 const vscode = require('vscode')
 
 const pkg = require('../package.json')

@@ -1,19 +1,10 @@
-/**
- * @module errors/secret-access-key-missing
- */
-
 const BaseError = require('./base')
 
 /**
- * @class
+ * @param {string} [message]
  */
 class SecretAccessKeyMissingError extends BaseError {
 
-  /**
-   * Creates an instance of SecretAccessKeyMissingError.
-   *
-   * @param {String} message
-   */
   constructor(message = 'Secret access key missing') {
     super(message)
     if (Error.captureStackTrace) {

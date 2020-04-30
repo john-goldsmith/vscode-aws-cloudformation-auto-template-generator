@@ -1,19 +1,10 @@
-/**
- * @module errors/profile-not-set
- */
-
 const BaseError = require('./base')
 
 /**
- * @class
+ * @param {string} [message]
  */
 class NonexistentConfigFileError extends BaseError {
 
-  /**
-   * Creates an instance of NonexistentConfigFileError.
-   *
-   * @param {String} message
-   */
   constructor(path, message = `No configuration file found at ${path}`) {
     super(message)
     if (Error.captureStackTrace) {

@@ -1,19 +1,10 @@
 /**
- * @module errors/base
- */
-
-/**
  * The class that all other errors should inherit from.
  *
- * @class
+ * @param {string} [message]
  */
 class BaseError extends Error {
 
-  /**
-   * Creates an instance of BaseError.
-   *
-   * @param {String} message
-   */
   constructor(message = 'Error') {
     super(message)
     if (Error.captureStackTrace) {

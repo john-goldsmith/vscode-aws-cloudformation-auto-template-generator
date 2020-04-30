@@ -1,11 +1,9 @@
 /**
- * @module utils/is-format-json
+ * Determines if the provided format is equal to `json`.
+ *
+ * @param {string} format
+ * @return {boolean}
  */
-
- /**
-  * @param {String} format
-  * @return {Boolean}
-  */
 function isFormatJson(format) {
   if (typeof format !== 'string') return false
   return format.toLowerCase() === 'json'

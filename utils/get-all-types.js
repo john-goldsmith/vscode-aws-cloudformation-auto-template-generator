@@ -1,7 +1,3 @@
-/**
- * @module utils/get-all-types
- */
-
 const { promisify } = require('util')
 
 /**
@@ -11,9 +7,10 @@ const { promisify } = require('util')
  * function will be called recursilvey until the `NextToken` parameter
  * is `null`, indicating that there are no more results.
  *
+ * @async
  * @param {AWS.CloudFormation} cloudformation A configured CloudFormation instance
- * @param {String} visibility One of 'PUBLIC' or 'PRIVATE'
- * @param {String} nextToken An AWS-issued token indicating that there are more results available, or `null` if there are no more results
+ * @param {string} visibility One of 'PUBLIC' or 'PRIVATE'
+ * @param {string} nextToken An AWS-issued token indicating that there are more results available, or `null` if there are no more results
  * @param {Array} typeSummaries An array storing previous results
  * @return {Promise<Array>}
  */

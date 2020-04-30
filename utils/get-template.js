@@ -1,14 +1,12 @@
+const getLogicalId = require('./get-logical-id')
+
 /**
- * @module utils/get-template
+ * Constructs the CloudFormation template.
+ *
+ * @param {Object} schema
+ * @param {string} [logicalId]
+ * @return {Object}
  */
-
- const getLogicalId = require('./get-logical-id')
-
- /**
-  * @param {Object} schema
-  * @param {String} [logicalId]
-  * @return {Object}
-  */
 function getTemplate(schema, logicalId = getLogicalId(schema.typeName)) {
   const readOnlyProperties = schema.readOnlyProperties.map(property => {
     const pieces = property.split('/')
@@ -24,7 +22,7 @@ function getTemplate(schema, logicalId = getLogicalId(schema.typeName)) {
   }
 
   /**
-   * @param {String} key
+   * @param {string} key
    * @param {Object} value
    * @param {Object|Array} template
    */

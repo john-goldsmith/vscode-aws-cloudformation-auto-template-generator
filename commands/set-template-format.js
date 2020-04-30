@@ -1,7 +1,3 @@
-/**
- * @module commands/set-template-format
- */
-
 const vscode = require('vscode')
 const pkg = require('../package.json')
 
@@ -13,7 +9,7 @@ const { getConfiguration } = workspace
 
 /**
  * Prompts the user to select a preferred authoring format (when the current
- * text editor is neither YAML or JSON). Said differently, the file mode
+ * text editor is neither YAML nor JSON). Said differently, the file mode
  * (language ID) of the current text editor takes precedence over this
  * setting.
  *

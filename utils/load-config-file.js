@@ -1,7 +1,3 @@
-/**
- * @module utils/load-config-file
- */
-
 const vscode = require('vscode')
 const { join } = require('path')
 
@@ -11,7 +7,14 @@ const readFileAsString = require('./read-file-as-string')
 const parseIni = require('./parse-ini')
 const normalizeConfigFile = require('./normalize-config-file')
 
-// See https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L61-L72
+/**
+ * Attempts to load an AWS config file at the provided location.
+ *
+ * @async
+ * @param {string} configFilePath
+ * @return {Promise<Object>}
+ * @see https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L61-L72
+ */
 async function loadConfigFile(configFilePath) {
   if (!configFilePath) {
     configFilePath = join(getHomeDir(), '.aws', 'config')

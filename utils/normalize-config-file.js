@@ -1,10 +1,15 @@
 /**
- * @module utils/normalize-config-file
+ * @constant {RegExp}
  */
-
 const PROFILE_KEY_REGEX = /^profile\s(["'])?([^\1]+)\1$/
 
-// See https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L106-L125
+/**
+ * Normalizes data from an AWS config file.
+ *
+ * @param {Object} data
+ * @return {Object}
+ * @see https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L106-L125
+ */
 function normalizeConfigFile(data) {
   const map = {}
   for (const key of Object.keys(data)) {

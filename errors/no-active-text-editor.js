@@ -1,19 +1,10 @@
-/**
- * @module errors/no-active-text-editor
- */
-
 const BaseError = require('./base')
 
 /**
- * @class
+ * @param {string} [message]
  */
 class NoActiveTextEditorError extends BaseError {
 
-  /**
-   * Creates an instance of NoActiveTextEditorError.
-   *
-   * @param {String} message
-   */
   constructor(message = `No active text editor`) {
     super(message)
     if (Error.captureStackTrace) {

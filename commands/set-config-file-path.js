@@ -1,7 +1,3 @@
-/**
- * @module commands/set-config-file-path
- */
-
 const vscode = require('vscode')
 
 const {

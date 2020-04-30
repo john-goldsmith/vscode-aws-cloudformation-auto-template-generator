@@ -1,7 +1,3 @@
-/**
- * @module utils
- */
-
 const fileExists = require('./file-exists')
 const getAllTypes = require('./get-all-types')
 const getHomeDir = require('./get-home-dir')

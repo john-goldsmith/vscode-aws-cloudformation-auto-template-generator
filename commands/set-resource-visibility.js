@@ -1,7 +1,3 @@
-/**
- * @module commands/set-resource-visibility
- */
-
 const vscode = require('vscode')
 
 const pkg = require('../package.json')
@@ -16,12 +12,12 @@ const { showQuickPick, setStatusBarMessage, showErrorMessage } = window
  * The values are imported from the `package.json` file (since that's
  * where settings are defined). Valid values include:
  *
- * PRIVATE: The type is only visible and usable within the account in
- *          which it is registered. Currently, AWS CloudFormation marks
- *          any types you create as PRIVATE.
+ * `PRIVATE`: The type is only visible and usable within the account in
+ *            which it is registered. Currently, AWS CloudFormation marks
+ *            any types you create as PRIVATE.
  *
- * PUBLIC:  The type is publically visible and usable within any Amazon
- *          account.
+ * `PUBLIC`: The type is publically visible and usable within any Amazon
+ *           account.
  *
  * @see https://docs.aws.amazon.com/cli/latest/reference/cloudformation/list-types.html
  * @return {Function<Promise<undefined>>}

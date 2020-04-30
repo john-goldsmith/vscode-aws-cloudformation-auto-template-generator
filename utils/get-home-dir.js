@@ -1,12 +1,10 @@
-/**
- * @module utils/get-home-dir
- */
-
 const { homedir } = require('os')
 const { sep } = require('path')
 
 /**
- * @return {String}
+ * Returns the OS-specific home directory.
+ *
+ * @return {string}
  * @see https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L147-L162
  */
 function getHomeDir() {

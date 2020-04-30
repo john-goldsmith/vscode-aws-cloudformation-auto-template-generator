@@ -1,8 +1,10 @@
 /**
- * @module utils/parse-ini
+ * Parses a stringified AWS config file.
+ *
+ * @param {string} iniData
+ * @return {Object}
+ * @see https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L127-L145
  */
-
-// See https://github.com/aws/aws-toolkit-vscode/blob/master/src/shared/credentials/credentialsFile.ts#L127-L145
 function parseIni(iniData) {
   const map = {}
   let currentSection

@@ -1,19 +1,10 @@
-/**
- * @module errors/access-key-id-missing
- */
-
 const BaseError = require('./base')
 
 /**
- * @class
+ * @param {string} [message]
  */
 class AccessKeyIdMissingError extends BaseError {
 
-  /**
-   * Creates an instance of AccessKeyIdMissingError.
-   *
-   * @param {String} message
-   */
   constructor(message = 'Access key ID missing') {
     super(message)
     if (Error.captureStackTrace) {

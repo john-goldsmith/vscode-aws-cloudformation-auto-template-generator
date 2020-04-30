@@ -1,7 +1,3 @@
-/**
- * @module commands/insert-resource
- */
-
 const vscode = require('vscode')
 const AWS = require('aws-sdk')
 const { promisify } = require('util')
@@ -181,10 +177,11 @@ function insertResource(context) {
       await activeTextEditor.edit(textEditorEdit => textEditorEdit.insert(position, value))
 
       /**
+       * @ignore
        * The following automatically highlights the logical ID for easy
-       * editing. The expression 'line + 1' accounts for the opening curly
-       * brace '{' found in JSON. The expression 'editorTabSize + 1'
-       * accounts for the opening double quotes '"' of the first property
+       * editing. The expression `line + 1` accounts for the opening curly
+       * brace `{` found in JSON. The expression `editorTabSize + 1`
+       * accounts for the opening double quotes `"` of the first property
        * found in JSON.
        */
       const [anchorLine, anchorCharacter, activeLine, activeCharacter] = isJson

@@ -1,7 +1,3 @@
-/**
- * @module commands/bust-cache
- */
-
 const vscode = require('vscode')
 
 const {

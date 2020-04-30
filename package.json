@@ -205,6 +205,7 @@
 		"commitizen": "4.0.3",
 		"coveralls": "3.0.11",
 		"cz-conventional-changelog": "3.1.0",
+		"documentation": "12.3.0",
 		"eslint": "6.8.0",
 		"glob": "7.1.6",
 		"husky": "4.2.3",
@@ -248,13 +249,15 @@
 		"url": "https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.git"
 	},
 	"scripts": {
-		"coveralls": "cat ./coverage/lcov.info | $(npm bin)/coveralls",
+		"coveralls": "cat ./coverage/lcov.info | npx coveralls",
 		"cz": "npx git-cz",
-		"lint": "$(npm bin)/eslint ./extension.js ./cache-keys.js ./config.js ./commands/**/*.js ./errors/**/*.js ./test/**/*.js ./utils/**/*.js",
+		"lint": "npx eslint ./extension.js ./cache-keys.js ./config.js ./commands/**/*.js ./errors/**/*.js ./test/**/*.js ./utils/**/*.js",
 		"precommit": "npm run lint && npm test",
-		"test": "$(npm bin)/npm-run-all test:*",
+		"test": "npx npm-run-all test:*",
 		"test:integration": "CODE_TESTS_PATH=$(npm prefix)/test/integration CODE_DISABLE_EXTENSIONS=true node ./node_modules/vscode/bin/test",
-		"test:unit": "jest ./test/unit"
+		"test:unit": "npx jest ./test/unit",
+		"docs:lint": "npx documentation lint extension.js commands/ errors/ utils/",
+		"docs:html": "npx documentation build extension.js commands/ errors/ utils/ -f html -o docs"
 	},
 	"version": "1.0.1"
 }
