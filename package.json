@@ -259,5 +259,5 @@
 		"docs:lint": "npx documentation lint extension.js commands/ errors/ utils/",
 		"docs:html": "npx documentation build extension.js commands/ errors/ utils/ -f html -o docs"
 	},
-	"version": "1.0.1"
+	"version": "1.0.2"
 }
