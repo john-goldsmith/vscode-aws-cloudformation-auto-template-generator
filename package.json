@@ -218,7 +218,7 @@
 	},
 	"displayName": "AWS CloudFormation Auto-template Generator",
 	"engines": {
-		"vscode": "^1.43.0"
+		"vscode": "^1.44.0"
 	},
 	"galleryBanner": {
 		"color": "#FFFFFF",
