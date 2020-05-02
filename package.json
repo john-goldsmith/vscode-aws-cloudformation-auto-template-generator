@@ -195,7 +195,7 @@
 		"fs-extra": "9.0.0",
 		"js-yaml": "3.13.1"
 	},
-	"description": "VS Code extension for automatically generating fully-expanded AWS CloudFormation resource templates",
+	"description": "Automatically generate fully-expanded AWS CloudFormation resource templates",
 	"devDependencies": {
 		"@semantic-release/changelog": "5.0.1",
 		"@types/glob": "7.1.1",
