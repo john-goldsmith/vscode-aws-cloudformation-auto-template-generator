@@ -73,7 +73,7 @@ function getTemplate(schema, logicalId = getLogicalId(schema.typeName)) {
           isTemplateArray
             ? template.push({})
             : template[key] = {}
-          Object.keys(value.properties).forEach(propertyKey => {
+          Object.keys(value.properties || {}).forEach(propertyKey => {
             getProperties(propertyKey, value.properties[propertyKey], isTemplateArray ? template[0] : template[key])
           })
           break
