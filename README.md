@@ -115,17 +115,3 @@ See [.eslintrc.json](./.eslintrc.json) for configuration options.
 * Account for [`VersionId`](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#describeType-property) when describing a resource
 * Implement [STS](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/STS.html)
 * Convert to TypeScript
-
-## Release Notes
-
-### 1.0.0 - March 30, 2020
-
-Initial release. All features use per-workspace state unless otherwise noted. Features include:
-
-* Added ability to insert CloudFormation resource
-* Added ability to set AWS profile
-* Added ability to set template format
-* Added ability to set config file path
-* Added ability to set resource visibility
-* Added ability to set AWS region
-* Added ability to bust cache
