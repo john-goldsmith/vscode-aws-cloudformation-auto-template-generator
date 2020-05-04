@@ -202,7 +202,7 @@
 		"@types/mocha": "7.0.2",
 		"@types/node": "13.13.4",
 		"@types/vscode": "1.44.0",
-		"commitizen": "4.0.5",
+		"commitizen": "4.1.0",
 		"coveralls": "3.1.0",
 		"cz-conventional-changelog": "3.1.0",
 		"documentation": "12.3.0",
