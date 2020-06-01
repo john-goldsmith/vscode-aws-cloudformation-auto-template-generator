@@ -1,13 +1,30 @@
-# [1.0.3](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/compare/v1.0.2...v1.0.3) (2020-05-02)
+# [1.1.1](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/compare/v1.1.0...v1.1.1) (2020-06-01)
+
+### Dependencies
+
+* **package:** update `documentation` to version 13.0.0 ([#45](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/45)) ([da0fcd2](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/da0fcd2033221fffca430a35042d70ebfe1f6335))
+* **package:** update `js-yaml` to version 3.14.0 ([#46](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/46)) ([b7b6651](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/b7b6651a992a99304565c8dee714ac65f15912bb))
+* **package:** update `mocha` to version 7.2.0 ([#47](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/47)) ([b4a099f](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/b4a099f7c3f12a0282fd92a1c39f002f55191d9b))
+* **package:** update `semantic-release` to version 17.0.8 (#48) ([#47](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/48)) ([0fcd587](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/0fcd5875fb000a8a4d68f1ec13b1f160e7a97c7c))
+* **package:** update `vscode-test` to version 1.4.0 ([#49](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/49)) ([196847b](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/196847bb7f76885a36930a5983d876afc608d3dd))
+* **package:** update `nyc` to version 15.1.0 ([#50](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/50)) ([165712c](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/165712c77409e294b06f703987cddbedcfd61d1c))
+* **package:** update `@types/vscode` to version 1.45.1 ([#51](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/51)) ([498981f](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/498981fddd19ccdc3ce64ac5b21ef6a0d6f8f9bb))
+* **package:** update `aws-sdk` to version 2.687.0 ([#52](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/52)) ([51b6057](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/51b605773da418e4e06daf601295c893b4d46879))
+* **package:** update `@types/node` to version 14.0.6 ([#53](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/pull/53)) ([2294c84](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/2294c84f7fff914fbf35ce93caa052afc524f65f))
+
+# [1.1.0](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/compare/v1.0.2...v1.1.0) (2020-05-02)
 
 ### Bug Fixes
 
 * provide default object properties if none are present ([1163cff](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/1163cff6e8f36297c6615bf9a0dca92d90c7777a)), closes [#35](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/issues/35)
+
+### Dependencies
+
 * **package:** update `aws-sdk` to version 2.668.0 ([#34](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/issues/34)) ([5a59cf6](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/5a59cf629dc98faf08388c5d6750859aed467361))
 
 # [1.0.2](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/compare/1.0.1...v1.0.2) (2020-04-30)
 
-### Bug Fixes
+### Dependencies
 
 * **package:** update `aws-sdk` to version 2.667.0 ([8eeae23](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/8eeae23bbd772ab287080398ce8bf3b086990276))
 * **package:** update `@types/node` to version 13.13.4 ([8eeae23](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/commit/8eeae23bbd772ab287080398ce8bf3b086990276))
