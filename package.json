@@ -249,7 +249,7 @@
 		"template",
 		"generator"
 	],
-	"main": "./extension.js",
+	"main": "./dist/src/extension.js",
 	"name": "vscode-aws-cloudformation-auto-template-generator",
 	"nyc": {
 		"all": true

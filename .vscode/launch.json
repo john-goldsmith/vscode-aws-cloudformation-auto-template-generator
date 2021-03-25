@@ -12,6 +12,10 @@
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				"--extensionDevelopmentPath=${workspaceFolder}"
+			],
+			"preLaunchTask": "tsc: build - tsconfig.json",
+			"outFiles": [
+				"${workspaceFolder}/dist/**/*.js"
 			]
 		},
 		{
