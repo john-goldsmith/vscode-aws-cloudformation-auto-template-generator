@@ -22,11 +22,11 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "commands/**/*.js",
-    "errors/**/*.js",
-    "utils/**/*.js",
-    "extension.js",
-    "cache-keys.js"
+    "src/commands/**/*.ts",
+    "src/errors/**/*.ts",
+    "src/utils/**/*.ts",
+    "src/extension.ts",
+    "src/cache-keys.ts"
   ],
 
   // The directory where Jest should output its coverage files
@@ -89,7 +89,7 @@ module.exports = {
   // notifyMode: "always",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: null,
+  preset: 'ts-jest',
 
   // Run tests from one or more projects
   // projects: null,
@@ -142,7 +142,7 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    "**/test/unit/**/*.test.js",
+    "**/test/unit/**/*.test.ts",
     // "**/?(*.)+(spec|test).js?(x)"
   ],
 

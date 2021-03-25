@@ -1,41 +1,18 @@
 {
+	"root": true,
 	"env": {
 		"browser": false,
-		"commonjs": true,
 		"es6": true,
 		"node": true,
-		"mocha": true
+		"mocha": true,
+		"jest": true
 	},
-	"parserOptions": {
-		"ecmaVersion": 2018,
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"sourceType": "module"
-	},
-	"rules": {
-		"no-const-assign": "warn",
-		"no-this-before-super": "warn",
-		"no-undef": "warn",
-		"no-unreachable": "warn",
-		"no-unused-vars": "warn",
-		"constructor-super": "warn",
-		"valid-typeof": "warn"
-	},
-	"globals": {
-		"beforeAll": false,
-		"afterAll": false,
-    "afterEach": false,
-    "beforeEach": false,
-    "before": false,
-    "after": false,
-    "context": false,
-    "describe": false,
-    "expect": false,
-    "it": false,
-    "test": false,
-		"sinon": false,
-		"jest": false,
-		"vscode": false
-  }
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended"
+	]
 }

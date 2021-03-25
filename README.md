@@ -1,4 +1,4 @@
-# vscode-aws-cloudformation-auto-template-generator
+# VS Code - AWS CloudFormation Auto-Template Generator
 VS Code extension for automatically generating fully-expanded AWS CloudFormation resource templates.
 
 [![Build Status](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg?branch=master)](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator)
@@ -7,7 +7,6 @@ VS Code extension for automatically generating fully-expanded AWS CloudFormation
 [![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?branch=master)](https://coveralls.io/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?branch=master)
 [![David DM](https://david-dm.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://david-dm.org)
 [![Known Vulnerabilities](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?targetFile=package.json)
-[![Greenkeeper badge](https://badges.greenkeeper.io/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg)](https://greenkeeper.io/) [![Join the chat at https://gitter.im/vscode-aws-cloudformation-auto-template-generator/community](https://badges.gitter.im/vscode-aws-cloudformation-auto-template-generator/community.svg)](https://gitter.im/vscode-aws-cloudformation-auto-template-generator/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Features
 
@@ -91,7 +90,7 @@ I've personally found the approach of working with a fully expanded template ben
 See [vsc-extension-quickstart.md](./vsc-extension-quickstart.md) for additional details.
 
 ## Tests
-See [test/unit](./test/unit) for test suite, and [Travis CI](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator) and [Code Climate](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator) for coverage.
+See [test/unit](./test/unit) for test suite, and [Travis CI](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator) and [Code Climate](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator) for coverage. After running tests, an Istanbul coverage report is generated in `./coverage/lcov-report/index.html`.
 
 1. Run `npm run test:unit`
 
@@ -114,4 +113,3 @@ See [.eslintrc.json](./.eslintrc.json) for configuration options.
 * DRY up unit tests
 * Account for [`VersionId`](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudFormation.html#describeType-property) when describing a resource
 * Implement [STS](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/STS.html)
-* Convert to TypeScript

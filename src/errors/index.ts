@@ -1,0 +1,6 @@
+export { default as ProfileNotSetError } from './profile-not-set'
+export { default as NonexistentConfigFileError } from './nonexistent-config-file'
+export { default as NoConfigProfilesError } from './no-config-profiles'
+export { default as NoActiveTextEditorError } from './no-active-text-editor'
+export { default as AccessKeyIdMissingError } from './access-key-id-missing'
+export { default as SecretAccessKeyMissingError } from './secret-access-key-missing'
