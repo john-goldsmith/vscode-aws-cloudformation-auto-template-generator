@@ -224,8 +224,11 @@
 		"nyc": "15.1.0",
 		"semantic-release": "17.4.2",
 		"ts-jest": "26.5.4",
+		"ts-loader": "8.0.18",
 		"typescript": "4.2.3",
-		"vscode-test": "1.5.1"
+		"vscode-test": "1.5.1",
+		"webpack": "5.28.0",
+		"webpack-cli": "4.5.0"
 	},
 	"displayName": "AWS CloudFormation Auto-template Generator",
 	"engines": {
@@ -249,7 +252,7 @@
 		"template",
 		"generator"
 	],
-	"main": "./dist/src/extension.js",
+	"main": "./dist/extension.js",
 	"name": "vscode-aws-cloudformation-auto-template-generator",
 	"nyc": {
 		"all": true
@@ -269,7 +272,10 @@
 		"test": "npx npm-run-all test:*",
 		"test:unit": "npx jest ./test/unit",
 		"docs:lint": "npx documentation lint ./src/**/* --shallow",
-		"docs:html": "npx documentation build ./src/**/* --shallow -f html -o docs"
+		"docs:html": "npx documentation build ./src/**/* --shallow -f html -o docs",
+		"vscode:prepublish": "npx webpack --mode production",
+		"webpack": "npx webpack --mode development",
+		"webpack:watch": "npx webpack --mode development --watch"
 	},
 	"version": "1.1.1"
 }
