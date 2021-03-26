@@ -19,7 +19,9 @@ jobs:
       - name: Unit tests
         run: npm run test:unit
       - name: Submit test coverage to Coveralls
-        run: npm run coveralls
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 #       - name: Submit test coverage to Code Climate
 #         run: 
 #       - name: Send Slack notification
