@@ -1,9 +1,11 @@
 name: CI
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
   workflow_dispatch:
 jobs:
   build:
@@ -26,5 +28,12 @@ jobs:
         uses: paambaati/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: c246ef7fa15b11b0ff32cbe3ab06b084e234ed3854a1accb3e3a4b18a32f87bb
-#       - name: Send Slack notification
-#         run:
+      - name: Send Slack notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: GitHub
+          SLACK_ICON: https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-12-19/288981919427_f45f04edd92902a96859_512.png
+          SLACK_COLOR: ${{job.status}}
+          SLACK_FOOTER: ''
+          
