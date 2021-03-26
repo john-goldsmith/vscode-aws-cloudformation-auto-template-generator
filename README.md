@@ -1,7 +1,7 @@
 # VS Code - AWS CloudFormation Auto-Template Generator
 VS Code extension for automatically generating fully-expanded AWS CloudFormation resource templates.
 
-[![Build Status](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator.svg?branch=master)](https://travis-ci.org/john-goldsmith/vscode-aws-cloudformation-auto-template-generator)
+[![CI](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/actions/workflows/main.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d7a491e37274f2241996/test_coverage)](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d7a491e37274f2241996/maintainability)](https://codeclimate.com/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/badge.svg?branch=master)](https://coveralls.io/github/john-goldsmith/vscode-aws-cloudformation-auto-template-generator?branch=master)
