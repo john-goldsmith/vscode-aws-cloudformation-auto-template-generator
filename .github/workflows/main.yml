@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Lint docs
+        run: npm run docs:lint
+      - name: Unit tests
+        run: npm run test:unit
+      - name: Submit test coverage to Coveralls
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Submit test coverage to Code Climate
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: c246ef7fa15b11b0ff32cbe3ab06b084e234ed3854a1accb3e3a4b18a32f87bb
+#       - name: Send Slack notification
+#         run:
