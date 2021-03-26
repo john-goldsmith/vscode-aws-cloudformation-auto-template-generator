@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/compare/v1.1.1...v1.2.0) (2021-03-26)
+
+### Chores
+
+* convert to TypeScript
+
 # [1.1.1](https://github.com/john-goldsmith/vscode-aws-cloudformation-auto-template-generator/compare/v1.1.0...v1.1.1) (2020-06-01)
 
 ### Dependencies
