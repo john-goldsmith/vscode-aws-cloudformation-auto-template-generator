@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint
+        run: npm run lint
+      - name: Lint docs
+        run: npm run docs:lint
+      - name: Unit tests
+        run: npm run test:unit
+      - name: Submit test coverage to Coveralls
+        run: npm run coveralls
+#       - name: Submit test coverage to Code Climate
+#         run: 
+#       - name: Send Slack notification
+#         run:
