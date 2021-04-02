@@ -37,5 +37,5 @@ jobs:
           SLACK_USERNAME: GitHub
           SLACK_ICON: https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-12-19/288981919427_f45f04edd92902a96859_512.png
           SLACK_COLOR: ${{job.status}}
-          SLACK_FOOTER: ''
+          SLACK_FOOTER: 'Build finished'
           
