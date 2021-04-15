@@ -197,7 +197,7 @@
 	"dependencies": {
 		"aws-sdk": "2.887.0",
 		"fs-extra": "9.1.0",
-		"js-yaml": "4.0.0"
+		"js-yaml": "4.1.0"
 	},
 	"description": "Automatically generate fully-expanded AWS CloudFormation resource templates",
 	"devDependencies": {
