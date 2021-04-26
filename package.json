@@ -214,7 +214,7 @@
 		"commitizen": "4.2.3",
 		"coveralls": "3.1.0",
 		"cz-conventional-changelog": "3.3.0",
-		"documentation": "13.2.4",
+		"documentation": "13.2.5",
 		"eslint": "7.25.0",
 		"glob": "7.1.6",
 		"husky": "6.0.0",
