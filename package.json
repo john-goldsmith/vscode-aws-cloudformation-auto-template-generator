@@ -205,7 +205,7 @@
 		"@types/fs-extra": "9.0.11",
 		"@types/glob": "7.1.3",
 		"@types/jest": "26.0.23",
-		"@types/js-yaml": "4.0.0",
+		"@types/js-yaml": "4.0.1",
 		"@types/mocha": "8.2.2",
 		"@types/node": "14.14.41",
 		"@types/vscode": "1.45.0",
