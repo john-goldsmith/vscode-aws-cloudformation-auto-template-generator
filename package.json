@@ -195,7 +195,7 @@
 		]
 	},
 	"dependencies": {
-		"aws-sdk": "2.892.0",
+		"aws-sdk": "2.899.0",
 		"fs-extra": "9.1.0",
 		"js-yaml": "4.1.0"
 	},
